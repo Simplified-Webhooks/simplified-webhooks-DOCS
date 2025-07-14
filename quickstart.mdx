@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Instant Airtable Triggers for Make.com'
-description: 'Stop waiting for Airtable polls. Learn how to get instant notifications for record changes in your Make.com scenarios in just a few minutes.'
+title: "Quickstart: Instant Airtable Triggers for Make.com"
+description: "Stop waiting for Airtable polls. Learn how to get instant notifications for record changes in your Make.com scenarios in just a few minutes."
 ---
 
 ## What is Simplified Webhooks?
@@ -12,100 +12,83 @@ Our Make.com module handles all the complexity for you. **There are no webhook U
 ## Getting Started Guide
 
 <Steps>
-### Step 1: Set up your Simplified Webhooks Account
+  ### Step 1: Set up your Simplified Webhooks Account
 
-First, you'll need a Simplified Webhooks account, and to connect it to Airtable.
+  First, you'll need a Simplified Webhooks account, and to connect it to Airtable.
 
-1.  **Sign up for a free account.**
-    <CardGroup cols={1}>
-        <Card title="Sign up for Simplified Webhooks" icon="user-plus" href="https://simplified-webhooks.com/auth/sign-up">
-        </Card>
-    </CardGroup>
-<br />
-2.  **Connect your Airtable account.**
-    You'll need to create a Personal Access Token in Airtable to allow Simplified Webhooks to monitor your bases.
-    <AccordionGroup>
-        <Accordion title="How to get your Airtable Personal Access Token">
-            <p>
-                You can create a Personal Access Token in your Airtable account settings. For detailed instructions, refer to the official Airtable documentation.
-            </p>
-            <p>
-                <a href="https://support.airtable.com/docs/creating-personal-access-tokens" target="_blank">Airtable Docs: Creating Personal Access Tokens</a>
-            </p>
-            <p>
-                We've also prepared a short video to walk you through the process:
-            </p>
-            {/* Replace with your YouTube embed code */}
-            <div style={{
-                position: 'relative',
-                paddingBottom: '56.25%',
-                height: 0,
-                overflow: 'hidden',
-                maxWidth: '100%',
-            }}>
-                <iframe
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                    }}
-                ></iframe>
-            </div>
-        </Accordion>
-    </AccordionGroup>
-<br />
-3.  **Create a Simplified Webhooks API Key.**
-    This key is used to connect your Make.com account to Simplified Webhooks. You can create an API key in your profile settings.
-    <Note>
-      **Important:** Treat your API key like a password. Store it in a safe place and do not share it.
-    </Note>
-    <CardGroup cols={1}>
-        <Card title="Go to your Profile Settings" icon="key" href="https://www.simplified-webhooks.com/profile-settings">
-        </Card>
-    </CardGroup>
+  1. **Sign up for a free account.**
 
+     <CardGroup cols={1}>
+       <Card title="Sign up for Simplified Webhooks" icon="user-plus" horizontal href="https://simplified-webhooks.com/auth/sign-up">
+         
+       </Card>
+     </CardGroup>
 
-### Step 2: Configure the Module in Make.com
+  <br />
 
-Now, head over to your Make.com account to add and configure the module.
+  2. **Connect your Airtable account.**
+     You'll need to create a Personal Access Token in Airtable to allow Simplified Webhooks to monitor your bases.
 
-1.  In your Make scenario, add a new module and search for **Simplified Webhooks**.
-2.  Select the trigger you need (e.g., `Watch New Records`, `Watch Updated Records`).
-3.  Make will prompt you to create a new connection. Give it a name, and paste in the **API Key** you created in the previous step.
-4.  Once the connection is active, simply select the Airtable **Base** and **Table** you want to watch from the dropdown menus.
+     <AccordionGroup>
+       <Accordion title="How to get your Airtable Personal Access Token">
+         <p>
+         You can create a Personal Access Token in your Airtable account settings. For detailed instructions, refer to the official Airtable documentation.
 
-Here is a short video that shows you how to configure the module in Make:
-{/* Replace with your YouTube embed code */}
-<div style={{
-    position: 'relative',
-    paddingBottom: '56.25%',
-    height: 0,
-    overflow: 'hidden',
-    maxWidth: '100%',
-}}>
-    <iframe
-        src="https://www.youtube.com/embed/YOUR_SECOND_VIDEO_ID"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-        }}
-    ></iframe>
-</div>
+         </p>
 
-### Step 3: You're done!
+         <p>
+         <a href="https://support.airtable.com/docs/creating-personal-access-tokens" target="_blank">
+         Airtable Docs: Creating Personal Access Tokens</a>
 
-That's it! Your Make.com scenario will now run instantly whenever a record is changed in your selected Airtable base.
+         </p>
 
+         <p>
+         We've also prepared a short video to walk you through the process:
+
+         </p>
+
+         {/* Replace with your YouTube embed code */}
+
+         <div style={{ position:"relative",paddingBottom:"56.25%",height:0,overflow:"hidden",maxWidth:"100%" }}>
+         <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position:"absolute",top:0,left:0,width:"100%",height:"100%" }} />
+
+         </div>
+       </Accordion>
+     </AccordionGroup>
+
+  <br />
+
+  3. **Create a Simplified Webhooks API Key.**
+     This key is used to connect your Make.com account to Simplified Webhooks. You can create an API key in your profile settings.
+
+     <Note>
+       **Important:** Treat your API key like a password. Store it in a safe place and do not share it.
+     </Note>
+     <CardGroup cols={1}>
+       <Card title="Go to your Profile Settings" icon="key" href="https://www.simplified-webhooks.com/profile-settings">
+         
+       </Card>
+     </CardGroup>
+
+  ### Step 2: Configure the Module in Make.com
+
+  Now, head over to your Make.com account to add and configure the module.
+
+  1. In your Make scenario, add a new module and search for **Simplified Webhooks**.
+  2. Select the trigger you need (e.g., `Watch New Records`, `Watch Updated Records`).
+  3. Make will prompt you to create a new connection. Give it a name, and paste in the **API Key** you created in the previous step.
+  4. Once the connection is active, simply select the Airtable **Base** and **Table** you want to watch from the dropdown menus.
+
+  Here is a short video that shows you how to configure the module in Make:
+
+  {/* Replace with your YouTube embed code */}
+
+  <div style={{ position:"relative",paddingBottom:"56.25%",height:0,overflow:"hidden",maxWidth:"100%" }}>
+  <iframe src="https://www.youtube.com/embed/YOUR_SECOND_VIDEO_ID" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position:"absolute",top:0,left:0,width:"100%",height:"100%" }} />
+
+  </div>
+
+  ### Step 3: You're done\!
+
+  That's it\! Your Make.com scenario will now run instantly whenever a record is changed in your selected Airtable base.
 </Steps>
