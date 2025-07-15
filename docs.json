@@ -24,10 +24,10 @@
             "group":"Make Integration",
             "pages":[
               "quickstart-make",
-              "three-ways-to-watch-changes",
-              "watch-new-records",
-              "watch-updated-records",
-              "watch-deleted-records"
+              "make/three-ways-to-watch-changes",
+              "make/watch-new-records",
+              "make/watch-updated-records",
+              "make/watch-deleted-records"
             ]
           }
         ]
