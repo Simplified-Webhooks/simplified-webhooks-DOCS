@@ -1,0 +1,57 @@
+---
+title: "Watch New Airtable Records on Make"
+description: "When to use the 'Watch New Airtable Records' trigger and what to expect."
+---
+
+### Setup the Make Scenario
+
+Create a new scenario, search for 'Simplified Webhooks' and choose the 'Watch New Airtable Records' module. If you have not setup a module before, visit the [quickstart](https://docs.simplified-webhooks.com/quickstart) to go through every step. 
+
+### Receiving Triggers
+
+The module 'Watch New Airtable Records' receives a trigger every time there is a new record in the chosen **Table** of your Airtable Base.
+
+The output of the module will always look like this:
+
+```json expandable
+{
+        "id": "6aa496db-5006-4bf7-be4b-06e50e65ad96",
+        "event": "create",
+        "recordId": "rec4yurm8f16BwMFj",
+        "tableId": "tblKn2Ygplrq5Kmbg",
+        "baseId": "appatVcKk6xNFwPej",
+        "fieldsById": {
+            "fld...": {
+                "name": "..",
+                "current": "..",
+                "previous": null
+            },
+            "fldp...": {
+                "name": "...",
+                "current": "...",
+                "previous": null
+            }
+        },
+        "fieldsByName": {
+            "Status": {
+                "id": "fld...",
+                "current": "...",
+                "previous": null
+            },
+            "Name": {
+                "id": "fldp...",
+                "current": "...",
+                "previous": null
+            }
+        },
+        "meta": {
+            "source": "client",
+            "occurredAt": "2025-07-14T08:45:06.405Z",
+            "user": {
+                "id": "usr...",
+                "name": "Test User",
+                "email": "test.user@gmail.com"
+            }
+        }
+    }
+```
