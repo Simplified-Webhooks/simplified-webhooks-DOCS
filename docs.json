@@ -22,7 +22,9 @@
           },
           {
             "group":"Make Integration",
-            "pages":[]
+            "pages":[
+              "watch_new_records.mdx"
+            ]
           }
         ]
       }
