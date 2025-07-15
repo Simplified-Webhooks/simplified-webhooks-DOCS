@@ -29,6 +29,26 @@ This native approach uses Airtable's built-in automation features. You set up an
 - No built-in way to detect deleted records
 - Additional place for automations
 
+```javascript
+const inputConfig = input.config();
+const data = {
+   record_id: inputConfig.recordID,
+   source:'...' //provide information like the automation's name or URL
+};
+
+const options = {
+   method: 'POST',
+   body: JSON.stringify(data),
+   headers: {
+      'Content-Type':'application/json'
+   }
+}
+
+let response = await fetch('{webhookUrl}', options);
+```
+
+If you want to use Airtable automations, you can use this script. Simply insert the webhook URL you receive from Make into the variable **{webhookUrl}.**
+
 ## 2. Make's 'Watch Records' Module (Polling)
 
 The traditional approach shown in most Make tutorials. Add an Airtable 'Watch Records' trigger to your scenario, and Make will periodically check your base for changes.
@@ -46,6 +66,7 @@ The traditional approach shown in most Make tutorials. Add an Airtable 'Watch Re
 - Delayed triggers (not real-time)
 - No deleted record detection
 - Higher costs on paid Make plans
+- Needs specific columns to work at all
 
 ## 3. Simplified Webhooks \+ Make Modules
 
