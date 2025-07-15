@@ -19,10 +19,11 @@ Setup your first webhooks in minutes.
   </Card>
 </CardGroup>
 
-| Features                    | Airtable Automations | Simplified Webhooks | Polling based triggers          |
-| :-------------------------: | :------------------: | :-----------------: | :-----------------------------: |
-| Trigger for New Records     | ✅                    | ✅                   | ✅ (after X Minutes)             |
-| Trigger for Updated Records | ✅                    | ✅                   | ✅ (after X Minutes)             |
-| Trigger for Deleted Records | ❌                    | ✅                   | ❌                               |
-| Who changed the records?    | ❌                    | ✅                   | ❌                               |
-| Time for 100 new records    |                      |                     | Depends on the polling interval |
+| Features                                                   | Airtable Automations | Simplified Webhooks | Polling based triggers                             |
+| :--------------------------------------------------------: | :------------------: | :-----------------: | :------------------------------------------------: |
+| Trigger for New Records<br />- who created the record?     | ✅<br /><br />❌       | ✅<br /><br />✅      | ✅ (after X Minutes)<br /><br />❌                   |
+| Trigger for Updated Records<br />- who updated the record? | ✅<br /><br />❌       | ✅<br /><br />✅      | ✅ (after X Minutes)<br /><br />❌                   |
+| Trigger for Deleted Records<br />- who deleted the record? | ❌<br /><br />❌       | ✅<br /><br />✅      | ❌<br /><br />❌                                     |
+| Time for 1 new record                                      | ~1500ms              | **~300ms**          | Depends on the polling interval (minimum 1 Minute) |
+| Time for 10 new records                                    | ~12seconds           | **~1600ms**         | Depends on the polling interval (minimum 1 Minute) |
+| Time for 100 new records                                   | ~1min 38seconds      | **~11seconds**      | Depends on the polling interval (minimum 1 Minute) |
