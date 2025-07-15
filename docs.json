@@ -23,7 +23,7 @@
           {
             "group":"Make Integration",
             "pages":[
-              "quickstart-make",
+              "make/quickstart-make",
               "make/three-ways-to-watch-changes",
               "make/watch-new-records",
               "make/watch-updated-records",
