@@ -1,0 +1,91 @@
+---
+title: "3 Ways to Watch Airtable Changes with Make"
+description: "Compare three methods (Airtable Automations, Make's Watch Records, Simplified Webhooks) to trigger Make scenarios when your Airtable data changes."
+readingTime: "6"
+sidebarTitle: "3 Ways to watch Airtable changes in Make"
+---
+
+# 3 Ways to Watch Airtable Changes with Make
+
+> Want to trigger your Make scenarios exactly when something changes in Airtable? Let's explore three powerful approaches to help you choose the perfect solution for your automation needs.
+
+Connecting Airtable to Make opens up powerful automation possibilities. But triggering your Make scenario at _exactly_ the right moment can be tricky. Here are three battle-tested approaches, each with its own strengths and limitations.
+
+## 1. Airtable Automation \+ Scripting Action
+
+This native approach uses Airtable's built-in automation features. You set up an automation that triggers based on your desired conditions (e.g., record created, updated, or matches specific criteria). The automation includes a 'Run script' action that makes an API call to a generic 'Webhook' module in your Make scenario.
+
+**Pros:**
+
+- No additional tools needed (uses Airtable's native features)
+- Fine-grained control over trigger conditions
+- Direct integration within Airtable
+
+**Cons:**
+
+- Requires JavaScript knowledge for the script step
+- Needs a **paid Airtable plan** for script actions
+- Performance issues with large databases
+- No built-in way to detect deleted records
+- Additional place for automations
+
+## 2. Make's 'Watch Records' Module (Polling)
+
+The traditional approach shown in most Make tutorials. Add an Airtable 'Watch Records' trigger to your scenario, and Make will periodically check your base for changes.
+
+**Pros:**
+
+- Simple setup process
+- No coding required
+- Built into Make's core features
+
+**Cons:**
+
+- Heavy on operations (checking frequently adds up)
+- Can miss rapid changes between checks
+- Delayed triggers (not real-time)
+- No deleted record detection
+- Higher costs on paid Make plans
+
+## 3. Simplified Webhooks \+ Make Modules
+
+A modern approach using dedicated webhook services. Connect your Airtable base to Simplified Webhooks and use our purpose-built Make modules for instant notifications.
+
+**Pros:**
+
+- True real-time triggers
+- Zero coding required
+- Extremely efficient on Make operations
+- Dedicated modules for created, updated, AND deleted records
+- Generous free tier available
+
+**Cons:**
+
+- Requires an additional service setup (but it's worth it\!)
+
+## Making Your Choice
+
+Here's a quick decision guide:
+
+| Feature           | Airtable Automation | Make's Watch Records | Simplified Webhooks |
+| ----------------- | :-----------------: | :------------------: | :-----------------: |
+| Setup Difficulty  | Medium              | Easy                 | Easy                |
+| Coding Required   | Yes                 | No                   | No                  |
+| Real-time Updates | Yes                 | No                   | Yes                 |
+| Delete Detection  | No                  | No                   | Yes                 |
+| Cost Efficiency   | Medium              | Low                  | High                |
+| Free Tier         | No                  | Yes\*                | Yes                 |
+
+> \*Make's free tier has limited operations, which can be quickly consumed by frequent polling
+
+## Conclusion
+
+While each method has its place, **Simplified Webhooks** stands out as the most robust solution for NoCode users who need reliable, real-time Airtable triggers. It combines the best of both worlds: the simplicity of Make's Watch Records with the immediacy of Airtable Automations, plus adds crucial features like delete detection.
+
+Choose based on your needs:
+
+- 🔧 **Airtable Automation:** When you are already on a paid Airtable plan and don't need advanced information such as who changed what.
+- 🕒 **Make's Watch Records:** For simple, low-frequency updates
+- ⚡ **Simplified Webhooks:** For real-time, efficient, and complete change detection
+
+> **Pro Tip:** Start with Simplified Webhooks' free tier to experience the benefits of real-time webhooks without any commitment. You can always adjust your approach as your needs evolve.
