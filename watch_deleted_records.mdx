@@ -1,0 +1,60 @@
+---
+title: "Watch Deleted Airtable Records on Make"
+description: "When to use the 'Watch Deleted Airtable Records' trigger and what to expect."
+sidebarTitle: "Watch Deleted Airtable Records"
+---
+
+### Setup the Make Scenario
+
+Create a new scenario, search for 'Simplified Webhooks' and choose the 'Watch Deleted Airtable Records' module. If you have not setup a module before, visit the [quickstart](https://docs.simplified-webhooks.com/quickstart) to go through every step.
+
+### Receiving Triggers
+
+The module 'Watch Deleted Airtable Records' receives a trigger every time a record has been deleted in the chosen **Table** of your Airtable Base.
+
+The output of the module will always look like this:
+
+```json expandable
+{
+        "id": "90b26bea-80d2-404f-96e0-0d685fe3061d",
+        "event": "delete",
+        "recordId": "rec4yurm8f16BwMFj",
+        "tableId": "tblKn2Ygplrq5Kmbg",
+        "baseId": "appatVcKk6xNFwPej",
+        "fieldsById": {}, //will always be empty
+        "fieldsByName": {}, //will always be empty
+        "meta": {
+            "source": "client",
+            "occurredAt": "2025-07-14T08:47:20.174Z",
+            "user": {
+                "id": "usrnwwJUfsBR6EMXl",
+                "name": "Test User",
+                "email": "test.user@gmail.com"
+            }
+        }
+    }
+```
+
+### Key components
+
+In every trigger you will always find
+
+```json
+{
+"event":"delete",
+"recordId":"",
+"tableId":"",
+"baseId":"",
+"fieldsById":{},
+"fieldsByName":{},
+"meta":{}
+}
+```
+
+This helps to know **what has happened** and **where in your Airtable Base**.
+
+### When to use the "Watch Deleted Airtable Records" module
+
+Using the Simplified Webhooks module is the only way to trigger Make Scenarios for deleted Airtable Records. Watching deleted records usually comes up when you would like to prevent deletion but because of the interface or base settings you cannot clearly forbid it.
+
+With the new trigger you **notify your team members who deleted** the records. You can **restore the deleted records** _manually_ or even setup a process to _automatically_ restore those records.

@@ -23,7 +23,9 @@
           {
             "group":"Make Integration",
             "pages":[
-              "watch_new_records"
+              "watch_new_records",
+              "watch_updated_records",
+              "watch_deleted_records"
             ]
           }
         ]

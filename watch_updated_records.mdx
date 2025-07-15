@@ -1,0 +1,76 @@
+---
+title: "Watch Updated Airtable Records on Make"
+description: "When to use the 'Watch Updated Airtable Records' trigger and what to expect."
+sidebarTitle: "Watch Updated Airtable Records"
+---
+
+### Setup the Make Scenario
+
+Create a new scenario, search for 'Simplified Webhooks' and choose the 'Watch Updated Airtable Records' module. If you have not setup a module before, visit the [quickstart](https://docs.simplified-webhooks.com/quickstart) to go through every step.
+
+### Receiving Triggers
+
+The module 'Watch Updated Airtable Records' receives a trigger every time there is a new update in the chosen **Table** and **Column(s)** of your Airtable Base.
+
+The output of the module will always look like this:
+
+```json expandable
+{
+        "id": "0abce289-4d03-46ef-80b5-16744c1798a4",
+        "event": "update",
+        "recordId": "recRPq7LWatCDsBXm",
+        "tableId": "tblKn2Ygplrq5Kmbg",
+        "baseId": "appatVcKk6xNFwPej",
+        "fieldsById": {
+            "fldqg4PbziDbWgLok": {
+                "name": "Status", //the column name
+                "current": "In progress", //the current column value
+                "previous": "Todo" //the previous column value
+            }
+        },
+        "fieldsByName": {
+            "Status": {
+                "id": "fldqg4PbziDbWgLok", //the column Id
+                "current": "In progress", //the current column value
+                "previous": "Todo" //the previous column value
+            }
+        },
+        "meta": {
+            "source": "client",
+            "occurredAt": "2025-07-14T08:46:25.107Z",
+            "user": {
+                "id": "usrnwwJUfsBR6EMXl",
+                "name": "Test User",
+                "email": "test.user@gmail.com"
+            }
+        }
+    }
+```
+
+### Key components
+
+In every trigger you will always find
+
+```json
+{
+"event":"create",
+"recordId":"",
+"tableId":"",
+"baseId":"",
+"fieldsById":{},
+"fieldsByName":{},
+"meta":{}
+}
+```
+
+This helps to know **what has happened** and **where in your Airtable Base**.
+
+Additional we provide you with two objects (**fieldsById** and **fieldByName**) which contain the same information.
+
+<Note>
+  We highly suggest to use the **fieldsById** variables in your scenario as the variables will **continue to work** even if you **rename a column** in Airtable.
+</Note>
+
+### Cautious Changes
+
+Keep in mind that the module will trigger whenever there is an update in a specified column. If you change the  column's settings and thereby update multiple records in your table, you will receive individual triggers for each record.
