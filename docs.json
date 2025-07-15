@@ -16,13 +16,14 @@
           {
             "group": "Get Started",
             "pages": [
-              "index",
-              "quickstart"
+              "index"
+              
             ]
           },
           {
             "group":"Make Integration",
             "pages":[
+              "quickstart_make",
               "watch_new_records",
               "watch_updated_records",
               "watch_deleted_records"
