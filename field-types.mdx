@@ -3,11 +3,23 @@ title: "How we process different field types."
 description: "You can store different types of data within Airtable. From simple text to files to referencing one or multiple collaborators. This information is stored in different formats within Airtable."
 ---
 
-### We simplified the different field types into an easily consumable structure.
+## We simplified the different field types into an easily consumable structure.
+
+While webhooks for _New Airtable Records_ will only every contain the `current` values of a column. The webhooks for _Updated Airtable Records_ will contain the `current` and the `previous` values of a column.
 
 Let's start with the basics and end with the more advanced columns later.
 
-All of our webhooks will deliver `AI Text`, `Email`, `Long Text`,`Phone` ,`Rich Text` , `URL`and `Single Line Text`  fields as **simple strings**.
+### String Columns
+
+All of our webhooks will deliver columns of the type:\
+`Email`\
+`Long Text`\
+`Phone` \
+`Rich Text` \
+`URL`and \
+`Single Line Text`  
+
+as **simple strings**.
 
 ```json
 "fld...": {										//column Id
@@ -15,3 +27,86 @@ All of our webhooks will deliver `AI Text`, `Email`, `Long Text`,`Phone` ,`Rich 
 	"current": "https://www.drinkforfood.de" 	//current column Value
 }
 ```
+
+### Date Columns
+
+All of our webhooks will deliver columns of the type:\
+`Date`\
+`Last Modified Time`\
+`Created Time`
+
+as **ISO-8601 formatted dates**.
+
+```json
+"fld...": {										//column Id
+	"name": "Test Date Column", 				//column Name
+	"current": "2025-07-19T09:08:39.000Z" 		//current column Value
+}
+```
+
+### Number Columns
+
+All of our webhooks will deliver columns of the type:\
+`Number`\
+`Duration`\
+`Percent`\
+`Count`\
+`Auto Number`\
+`Rating`\
+`Currency`
+
+as **numbers**.
+
+```json
+"fld...": {										//column Id
+	"name": "Test Number Column", 				//column Name
+	"current": 3.4, 							//current column Value
+}
+```
+
+### Boolean Columns
+
+Boolean values can be returned by multiple column types but formulas, rollups or lookup columns have varying output formats. `Checkbox columns`, however, will always be delivered as booleans if the column is `true`.
+
+<Info>
+  If checkbox columns are `false`, Airtable does not send this information. That's why empty values for a checkbox column have to be treated as `false`.
+</Info>
+
+```json
+"fld...": {										//column Id
+	"name": "Test Checkbox Column", 			//column Name
+	"current": true, 							//current column Value
+}
+```
+
+### Flat Arrays
+
+Now we start to go into more complex column types.
+
+**Multiple Select columns** will be delivered as flat arrays containing the names of the selected options.
+
+```json
+"fld...": {										//column Id
+	"name": "Test Multiple Select Column", 		//column Name
+	"current": [								//current column Value
+		"Option1",
+		"Option2"
+	] 							
+}
+```
+
+**Linked Record fields** will also be delivered as flat arrays but they will contain the record Ids of the linked records. 
+
+```json
+"fld...": {										//column Id
+	"name": "Test Linked Record Column", 		//column Name
+	"current": [								//current column Value
+		"recRPq7LWatCDsBXm",
+		"recsyxrrqFUZ4OWEN"
+	] 							
+}
+```
+
+### Complex Arrays
+
+User columns in Airtable can either select one user (which we covered here) or multiple users. 

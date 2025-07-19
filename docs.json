@@ -16,8 +16,8 @@
           {
             "group": "Get Started",
             "pages": [
-              "index"
-              
+              "index",
+              "field-types"
             ]
           },
           {
