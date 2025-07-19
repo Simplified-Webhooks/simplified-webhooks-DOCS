@@ -77,6 +77,7 @@ Here is a list of all Airtable column types:
 - [Created By](https://docs.simplified-webhooks.com/field-types#single-collaborator-columns)
 - [AI Text](https://docs.simplified-webhooks.com/field-types#single-collaborator-columns)
 - [Button](https://docs.simplified-webhooks.com/field-types#button-columns)
+- Barcode
 - [Multiple Select](https://docs.simplified-webhooks.com/field-types#multiple-select-columns)
 - [Linked Records](https://docs.simplified-webhooks.com/field-types#linked-record-columns)
 - [Multiple Collaborators](https://docs.simplified-webhooks.com/field-types#multiple-collaborators-columns)
@@ -199,6 +200,20 @@ A button consists of maximum two parts, a URL and a label. We do transfer both t
 	"current": {
 		"url": "https://www.simplified-webhooks.com",		//button URL
 		"label": "Receive instant Airtable webhooks"		//button Label
+	}					
+}
+```
+
+### Barcode Columns
+
+Barcode columns contain the data of the code as well as the type. That's why barcode columns will be sent as the following:
+
+```json
+"fld...": {													//column Id
+	"name": "Test Barcode Column", 							//column Name
+	"current": {
+		"type": "ean13",									//barcode Type
+		"text": "8000845065440"								//barcode Data
 	}					
 }
 ```
