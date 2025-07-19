@@ -7,7 +7,7 @@ description: "You can store different types of data within Airtable. From simple
 
 While webhooks for _New Airtable Records_ will only every contain the `current` values of a column. The webhooks for _Updated Airtable Records_ will contain the `current` and the `previous` values of a column.
 
-Looking at the data structure this means that New Airtable Records webhooks will look like:
+Looking at the data structure this means that `New Airtable Records` webhooks will look like:
 
 ```json
  {
@@ -18,9 +18,30 @@ Looking at the data structure this means that New Airtable Records webhooks will
 	"baseId": "app...",			//base Id of the new record 
 	"fieldsById": {
 		"fld..": {				//column Id 
-			"name":"...",		//column Name
-			"current":""		//current value as string
-			//the current value can be a string, number, boolean, object or array
+			"name":"...",		//column Name 
+			"current":""		//current value as string 
+			//the current value can be a string, number, boolean, object or array 
+		}				
+	}
+}
+```
+
+The webhooks for `Updated Airtable Records` will additionally contain a previous value for the individual columns.
+
+```json expandable
+ {
+	"id": "20ec590...",			//notification Id 
+	"event": "create",			//event Type 
+	"recordId": "rec...",		//record Id of new record 
+	"tableId": "tbl...",		//table Id of the new record 
+	"baseId": "app...",			//base Id of the new record 
+	"fieldsById": {
+		"fld..": {				//column Id 
+			"name":"...",		//column Name 
+			"current":"",		//current value as string 
+			"previous":""		//previous value as string 
+			//the current and previous value can be a string, number, boolean, object or array 
+			//the previous value can also be null 
 		}				
 	}
 }
