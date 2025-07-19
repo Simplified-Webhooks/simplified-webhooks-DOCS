@@ -56,35 +56,35 @@ The webhooks for `Updated Airtable Records` will additionally contain a `previou
 Here is a list of all Airtable column types:
 
 - [Email](/field-types#string-columns)
-- [Single Line Text](https://docs.simplified-webhooks.com/field-types#string-columns)
-- [Long Text](https://docs.simplified-webhooks.com/field-types#string-columns)
-- [Rich Text](https://docs.simplified-webhooks.com/field-types#string-columns)
-- [Phone](https://docs.simplified-webhooks.com/field-types#string-columns)
-- [URL](https://docs.simplified-webhooks.com/field-types#string-columns)
-- [Date](https://docs.simplified-webhooks.com/field-types#date-columns)
-- [Last Modified Time](https://docs.simplified-webhooks.com/field-types#date-columns)
-- [Created Time](https://docs.simplified-webhooks.com/field-types#date-columns)
-- [Number](https://docs.simplified-webhooks.com/field-types#number-columns)
-- [Duration](https://docs.simplified-webhooks.com/field-types#number-columns)
-- [Percent](https://docs.simplified-webhooks.com/field-types#number-columns)
-- [Count](https://docs.simplified-webhooks.com/field-types#number-columns)
-- [Auto Number](https://docs.simplified-webhooks.com/field-types#number-columns)
-- [Rating](https://docs.simplified-webhooks.com/field-types#number-columns)
-- [Currency](https://docs.simplified-webhooks.com/field-types#number-columns)
-- [Checkbox](https://docs.simplified-webhooks.com/field-types#boolean-columns)
-- [Single Collaborator](https://docs.simplified-webhooks.com/field-types#single-collaborator-columns)
-- [Last Modified By](https://docs.simplified-webhooks.com/field-types#single-collaborator-columns)
-- [Created By](https://docs.simplified-webhooks.com/field-types#single-collaborator-columns)
-- [AI Text](https://docs.simplified-webhooks.com/field-types#single-collaborator-columns)
-- [Button](https://docs.simplified-webhooks.com/field-types#button-columns)
-- [Barcode](https://docs.simplified-webhooks.com/field-types#barcode-columns)
-- [Multiple Select](https://docs.simplified-webhooks.com/field-types#multiple-select-columns)
-- [Linked Records](https://docs.simplified-webhooks.com/field-types#linked-record-columns)
-- [Multiple Collaborators](https://docs.simplified-webhooks.com/field-types#multiple-collaborators-columns)
-- [Attachment](https://docs.simplified-webhooks.com/field-types#attachment-columns)
-- [Formula](https://docs.simplified-webhooks.com/field-types#formula%2C-lookup-and-rollup-columns)
-- [Lookup](https://docs.simplified-webhooks.com/field-types#formula%2C-lookup-and-rollup-columns)
-- [Rollup](https://docs.simplified-webhooks.com/field-types#formula%2C-lookup-and-rollup-columns)
+- [Single Line Text](/field-types#string-columns)
+- [Long Text](/field-types#string-columns)
+- [Rich Text](/field-types#string-columns)
+- [Phone](/field-types#string-columns)
+- [URL](/field-types#string-columns)
+- [Date](/field-types#date-columns)
+- [Last Modified Time](/field-types#date-columns)
+- [Created Time](/field-types#date-columns)
+- [Number](/field-types#number-columns)
+- [Duration](/field-types#number-columns)
+- [Percent](/field-types#number-columns)
+- [Count](/field-types#number-columns)
+- [Auto Number](/field-types#number-columns)
+- [Rating](/field-types#number-columns)
+- [Currency](/field-types#number-columns)
+- [Checkbox](/field-types#boolean-columns)
+- [Single Collaborator](/field-types#single-collaborator-columns)
+- [Last Modified By](/field-types#single-collaborator-columns)
+- [Created By](/field-types#single-collaborator-columns)
+- [AI Text](/field-types#single-collaborator-columns)
+- [Button](/field-types#button-columns)
+- [Barcode](/field-types#barcode-columns)
+- [Multiple Select](/field-types#multiple-select-columns)
+- [Linked Records](/field-types#linked-record-columns)
+- [Multiple Collaborators](/field-types#multiple-collaborators-columns)
+- [Attachment](/field-types#attachment-columns)
+- [Formula](/field-types#formula%2C-lookup-and-rollup-columns)
+- [Lookup](/field-types#formula%2C-lookup-and-rollup-columns)
+- [Rollup](/field-types#formula%2C-lookup-and-rollup-columns)
 
 Let's start with the basics and end with the more advanced columns later.
 
@@ -321,7 +321,7 @@ Output format `checkbox` will be sent as boolean values:
 ```
 
 <Info>
-  As for the normal [checkbox columns](https://docs.simplified-webhooks.com/field-types#checkbox-columns), Airtable does not send anything if the value is `false`.
+  As for the normal [checkbox columns](/field-types#checkbox-columns), Airtable does not send anything if the value is `false`.
 </Info>
 
 Output format `date` will be sent as a ISO-8601 formatted date string:
@@ -340,7 +340,7 @@ Normal text output for `formula` and `lookup` columns will be sent as a simple s
 //if the output format is not specified differently
 "fld...": {										//column Id
 	"name": "Test Fromula/Lookup Column", 		//column Name
-	"current": "https://www.drinkforfood.de" 	//current column Value
+	"current": "some random Text" 	//current column Value
 }
 ```
 
