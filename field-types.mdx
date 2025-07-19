@@ -304,9 +304,9 @@ Output formats `number`, `currency` and `percent` will be sent as numbers:
 
 ```json
 //if output format is number, currency or precent
-"fld...": {										//column Id
-	"name": "Test Formular Column", 			//column Name
-	"current": 3.4, 							//current column Value
+"fld...": {												//column Id
+	"name": "Test Formula/Lookup/Rollup Column", 		//column Name
+	"current": 3.4, 									//current column Value
 }
 ```
 
@@ -314,9 +314,9 @@ Output format `checkbox` will be sent as boolean values:
 
 ```json
 //if output format is checkbox
-"fld...": {										//column Id
-	"name": "Test Formula Column", 				//column Name
-	"current": true, 							//current column Value
+"fld...": {											//column Id
+	"name": "Test Formula/Lookup/Rollup Column", 	//column Name
+	"current": true, 								//current column Value
 }
 ```
 
@@ -328,17 +328,18 @@ Output format `date` will be sent as a ISO-8601 formatted date string:
 
 ```json
 //if output format is date
-"fld...": {										//column Id
-	"name": "Test Formula Column", 				//column Name
-	"current": "2025-07-19T09:08:39.000Z" 		//current column Value
+"fld...": {											//column Id
+	"name": "Test Formula/Lookup/Rollup Column", 	//column Name
+	"current": "2025-07-19T09:08:39.000Z" 			//current column Value
 }
 ```
 
 Normal text output for `formula` and `lookup` columns will be sent as a simple string:
 
 ```json
+//if the output format is not specified differently
 "fld...": {										//column Id
-	"name": "Test Column", 						//column Name
+	"name": "Test Fromula/Lookup Column", 		//column Name
 	"current": "https://www.drinkforfood.de" 	//current column Value
 }
 ```
@@ -346,7 +347,7 @@ Normal text output for `formula` and `lookup` columns will be sent as a simple s
 `Rollup` columns that result a single line of text **<u>deviate</u>** from the above structure. An example would be a rollup column that contains `Arrayjoin(values)`  as the formula. **These will be sent as an array**:
 
 ```json
-//rollup column with "Arrayjoin(values)"
+//rollup columns with e.g. "Arrayjoin(values)"
 "fld...": {										//column Id
 	"name": "Test Rollup Column", 				//column Name
 	"current": [								//current column Value
@@ -359,7 +360,8 @@ Normal text output for `formula` and `lookup` columns will be sent as a simple s
 	"name": "Test Rollup Column", 				//column Name
 	"current": [								//current column Value
 		"Text1",
-		"Text2"
+		"Text2",
+		"..."
 	] 							
 }
 ```
