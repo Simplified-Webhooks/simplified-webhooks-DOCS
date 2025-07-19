@@ -321,3 +321,24 @@ Normal text output for `formula` and `lookup` columns will be sent as a simple s
 	"current": "https://www.drinkforfood.de" 	//current column Value
 }
 ```
+
+`Rollup` columns that result a single line of text **<u>deviate</u>** from the above structure. An example would be a rollup column that contains `Arrayjoin(values)`  as the formula. **These will be sent as an array**:
+
+```json
+//rollup column with "Arrayjoin(values)"
+"fld...": {										//column Id
+	"name": "Test Rollup Column", 				//column Name
+	"current": [								//current column Value
+		"Text1"
+	] 							
+}
+
+//rollup column with simply: "values"
+"fld...": {										//column Id
+	"name": "Test Rollup Column", 				//column Name
+	"current": [								//current column Value
+		"Text1",
+		"Text2"
+	] 							
+}
+```
