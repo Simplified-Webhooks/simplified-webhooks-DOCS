@@ -7,6 +7,35 @@ description: "You can store different types of data within Airtable. From simple
 
 While webhooks for _New Airtable Records_ will only every contain the `current` values of a column. The webhooks for _Updated Airtable Records_ will contain the `current` and the `previous` values of a column.
 
+Here is a list of all Airtable column types:
+
+- Email
+- Single Line Text
+- Long Text
+- Rich Text
+- Phone
+- URL
+- Date
+- Last Modified Time
+- Created Time
+- Number
+- Duration
+- Percent
+- Count
+- Auto Number
+- Rating
+- Currency
+- Checkbox
+- Single Collaborator
+- Last Modified By
+- Created By
+- AI Text
+- Button
+- Multiple Select
+- Linked Records
+- Multiple Collaborators
+- Attachment
+
 Let's start with the basics and end with the more advanced columns later.
 
 ### String Columns
@@ -17,7 +46,7 @@ All of our webhooks will deliver columns of the type:\
 `Phone` \
 `Rich Text` \
 `URL` and \
-`Single Line Text`  
+`Single Line Text`
 
 as **simple strings**.
 
@@ -94,6 +123,37 @@ Columns that only contain a single user such as `Last Modified By`, `Created By`
 }
 ```
 
+### AI Text Columns
+
+For the newest of the columns the **AI Text** columns we are able to not only send the value but also the `state` and if it's `stale` (for definitions see [here](https://airtable.com/developers/web/api/field-model#aitext)). These additional values might be important to you if you want to know if you can use the value or if you should wait and for an updated value in the AI Text columns.
+
+Based on that, the format for `AI Text columns` will be:
+
+```json
+"fld...": {										//column Id
+	"name": "Test AI Text Column", 				//column Name
+	"current": {
+		"state": "loading",						//column State
+		"value": "Test Value",					//column Value
+		"isStale": false,						//should be recomputed?
+	}					
+}
+```
+
+### Button Columns
+
+A button consists of maximum two parts, a URL and a label. We do transfer both through our webhooks.
+
+```json
+"fld...": {													//column Id
+	"name": "Test Button Column", 							//column Name
+	"current": {
+		"url": "https://www.simplified-webhooks.com",		//button URL
+		"label": "Receive instant Airtable webhooks"		//button Label
+	}					
+}
+```
+
 ### Multiple Select Columns
 
 Now we start to go into more complex column types.
@@ -112,7 +172,7 @@ Now we start to go into more complex column types.
 
 ### Linked Record Columns
 
-**Linked Record fields** will also be delivered as flat arrays but they will contain the record Ids of the linked records. 
+**Linked Record fields** will also be delivered as flat arrays but they will contain the record Ids of the linked records.
 
 ```json
 "fld...": {										//column Id
@@ -148,7 +208,7 @@ User columns in Airtable can either select one user (which we covered [here](htt
 
 ### Attachment Columns
 
-Columns containing attachments will be sent as follows: 
+Columns containing attachments will be sent as follows:
 
 ```json
 "fld...": {										//column Id
@@ -169,22 +229,5 @@ Columns containing attachments will be sent as follows:
 			"filename":""			//file Name
 		}
 	] 							
-}
-```
-
-### AI Text Columns
-
-For the newest of the columns the **AI Text** columns we are able to not only send the value but also the `state` and if it's `stale` (for definitions see [here](https://airtable.com/developers/web/api/field-model#aitext)). These additional values might be important to you if you want to know if you can use the value or if you should wait and for an updated value in the AI Text columns.
-
-Based on that, the format for `AI Text columns` will be:
-
-```json
-"fld...": {										//column Id
-	"name": "Test AI Text Column", 				//column Name
-	"current": {
-		"state": "loading",						//column State
-		"value": "Test Value",					//column Value
-		"isStale": false,						//should be recomputed?
-	}					
 }
 ```
