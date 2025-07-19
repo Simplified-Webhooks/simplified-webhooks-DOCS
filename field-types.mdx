@@ -7,6 +7,25 @@ description: "You can store different types of data within Airtable. From simple
 
 While webhooks for _New Airtable Records_ will only every contain the `current` values of a column. The webhooks for _Updated Airtable Records_ will contain the `current` and the `previous` values of a column.
 
+Looking at the data structure this means that New Airtable Records webhooks will look like:
+
+```json
+ {
+	"id": "20ec590...",			//notification Id 
+	"event": "create",			//event Type 
+	"recordId": "rec...",		//record Id of new record 
+	"tableId": "tbl...",		//table Id of the new record 
+	"baseId": "app...",			//base Id of the new record 
+	"fieldsById": {
+		"fld..": {				//column Id 
+			"name":"...",		//column Name
+			"current":""		//current value as string
+			//the current value can be a string, number, boolean, object or array
+		}				
+	}
+}
+```
+
 Here is a list of all Airtable column types:
 
 - [Email](https://docs.simplified-webhooks.com/field-types#string-columns)
@@ -56,7 +75,7 @@ as **simple strings**.
 ```json
 "fld...": {										//column Id
 	"name": "Test Column", 						//column Name
-	"current": "https://www.drinkforfood.de" 	//current column Value
+	"current": "Some random Text" 				//current column Value
 }
 ```
 
@@ -236,3 +255,48 @@ Columns containing attachments will be sent as follows:
 ```
 
 ### Formula, Lookup and Rollup Columns
+
+As we've already covered most of the columns by now, Airtable offers three columns that have a varying output format based on the evaluation of the input / formula. This means that `formula`, `lookup` and `rollup` columns we be sent in different data types, depending on how you setup the columns.
+
+Output formats `number`, `currency` and `percent` will be sent as numbers:
+
+```json
+//if output format is number, currency or precent
+"fld...": {										//column Id
+	"name": "Test Formular Column", 			//column Name
+	"current": 3.4, 							//current column Value
+}
+```
+
+Output format `checkbox` will be sent as boolean values:
+
+```json
+//if output format is checkbox
+"fld...": {										//column Id
+	"name": "Test Formula Column", 				//column Name
+	"current": true, 							//current column Value
+}
+```
+
+<Info>
+  As for the normal [checkbox columns](https://docs.simplified-webhooks.com/field-types#checkbox-columns), Airtable does not send anything if the value is `false`.
+</Info>
+
+Output format `date` will be sent as a ISO-8601 formatted date string:
+
+```json
+//if output format is date
+"fld...": {										//column Id
+	"name": "Test Formula Column", 				//column Name
+	"current": "2025-07-19T09:08:39.000Z" 		//current column Value
+}
+```
+
+Normal text output for `formula` and `lookup` columns will be sent as a simple string:
+
+```json
+"fld...": {										//column Id
+	"name": "Test Column", 						//column Name
+	"current": "https://www.drinkforfood.de" 	//current column Value
+}
+```
