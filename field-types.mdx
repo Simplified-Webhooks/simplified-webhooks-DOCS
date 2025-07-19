@@ -11,15 +11,15 @@ Looking at the data structure this means that `New Airtable Records` webhooks wi
 
 ```json
  {
-	"id": "20ec590...",			//notification Id 
-	"event": "create",			//event Type 
-	"recordId": "rec...",		//record Id of new record 
-	"tableId": "tbl...",		//table Id of the new record 
-	"baseId": "app...",			//base Id of the new record 
+	"id": "20ec590...",				//notification Id 
+	"event": "create",				//event Type 
+	"recordId": "rec...",			//record Id of new record 
+	"tableId": "tbl...",			//table Id of the new record 
+	"baseId": "app...",				//base Id of the new record 
 	"fieldsById": {
-		"fld..": {				//column Id 
-			"name":"...",		//column Name 
-			"current":""		//current value as string 
+		"fld..": {					//column Id 
+			"name":"...", 			//column Name 
+			"current":"..." 		//current value as string 
 			//the current value can be a string, number, boolean, object or array 
 		}				
 	}
@@ -30,16 +30,16 @@ The webhooks for `Updated Airtable Records` will additionally contain a `previou
 
 ```json expandable
  {
-	"id": "20ec590...",			//notification Id 
-	"event": "create",			//event Type 
-	"recordId": "rec...",		//record Id of new record 
-	"tableId": "tbl...",		//table Id of the new record 
-	"baseId": "app...",			//base Id of the new record 
+	"id": "20ec590...",				//notification Id 
+	"event": "create",				//event Type 
+	"recordId": "rec...",			//record Id of new record 
+	"tableId": "tbl...",			//table Id of the new record 
+	"baseId": "app...",				//base Id of the new record 
 	"fieldsById": {
-		"fld..": {				//column Id 
-			"name":"...",		//column Name 
-			"current":"",		//current value as string 
-			"previous":""		//previous value as string 
+		"fld..": {					//column Id 
+			"name":"...",			//column Name 
+			"current":"...",		//current value as string 
+			"previous":"..."		//previous value as string 
 			//the current and previous value can be a string, number, boolean, object or array 
 			//the previous value can also be null 
 		}				
@@ -75,9 +75,9 @@ Here is a list of all Airtable column types:
 - [Linked Records](https://docs.simplified-webhooks.com/field-types#linked-record-columns)
 - [Multiple Collaborators](https://docs.simplified-webhooks.com/field-types#multiple-collaborators-columns)
 - [Attachment](https://docs.simplified-webhooks.com/field-types#attachment-columns)
-- Formula
-- Lookup
-- Rollup
+- [Formula](https://docs.simplified-webhooks.com/field-types#formula%2C-lookup-and-rollup-columns)
+- [Lookup](https://docs.simplified-webhooks.com/field-types#formula%2C-lookup-and-rollup-columns)
+- [Rollup](https://docs.simplified-webhooks.com/field-types#formula%2C-lookup-and-rollup-columns)
 
 Let's start with the basics and end with the more advanced columns later.
 
