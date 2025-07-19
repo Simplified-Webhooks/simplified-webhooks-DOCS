@@ -16,7 +16,7 @@ All of our webhooks will deliver columns of the type:\
 `Long Text`\
 `Phone` \
 `Rich Text` \
-`URL`and \
+`URL` and \
 `Single Line Text`  
 
 as **simple strings**.
@@ -79,7 +79,22 @@ Boolean values can be returned by multiple column types but formulas, rollups or
 }
 ```
 
-### Flat Arrays
+### Single Collaborator Columns
+
+Columns that only contain a single user such as `Last Modified By`, `Created By` or `Single User` columns will be sent with a **single user object**:
+
+```json
+"fld...": {										//column Id
+	"name": "Test Created By Column", 			//column Name
+	"current": {
+		"email":"test.user@gmail.com",			//user Email
+		"id":"usrnwwJUfsBR6EMXl",				//user Id
+		"name":"Test User"						//user Name
+	}				
+}
+```
+
+### Multiple Select Columns
 
 Now we start to go into more complex column types.
 
@@ -95,6 +110,8 @@ Now we start to go into more complex column types.
 }
 ```
 
+### Linked Record Columns
+
 **Linked Record fields** will also be delivered as flat arrays but they will contain the record Ids of the linked records. 
 
 ```json
@@ -107,6 +124,67 @@ Now we start to go into more complex column types.
 }
 ```
 
-### Complex Arrays
+### **Multiple Collaborators Columns**
 
-User columns in Airtable can either select one user (which we covered here) or multiple users. 
+User columns in Airtable can either select one user (which we covered [here](https://docs.simplified-webhooks.com/field-types#single-collaborator-columns)) or multiple users. For columns with **Multiple Collaborators** the format will be:
+
+```json
+"fld...": {											//column Id
+	"name": "Test Mulitple Collaborator Column", 	//column Name
+	"current": [									//current column Value
+		{
+			"email": "test.user@gmail.com",			//user E-Mail
+			"id": "usrnwwJUfsBR6EMXl",				//user Id
+			"name": "Test User 1"					//user Name
+		},
+		{
+			"email": "test.user2@gmail.com",		//user E-Mail
+			"id": "usrnwwJUfsBR6EMXl",				//user Id
+			"name": "Test User 2"					//user Name
+		}
+	] 							
+}
+```
+
+### Attachment Columns
+
+Columns containing attachments will be sent as follows: 
+
+```json
+"fld...": {										//column Id
+	"name": "Test Attachment Column", 			//column Name
+	"current": [								//current column Value
+		{
+			"id": "...",				//attachment Id
+			"url": "...",				//file URL (only valid for 2h)
+			"size":,					//file Size
+			"type":"",					//file Type
+			"filename":""				//file Name
+		},
+		{
+			"id": "...",				//attachment Id
+			"url": "...",			//file URL (only valid for 2h)
+			"size":,				//file Size
+			"type":"",				//file Type
+			"filename":""			//file Name
+		}
+	] 							
+}
+```
+
+### AI Text Columns
+
+For the newest of the columns the **AI Text** columns we are able to not only send the value but also the `state` and if it's `stale` (for definitions see [here](https://airtable.com/developers/web/api/field-model#aitext)). These additional values might be important to you if you want to know if you can use the value or if you should wait and for an updated value in the AI Text columns.
+
+Based on that, the format for `AI Text columns` will be:
+
+```json
+"fld...": {										//column Id
+	"name": "Test AI Text Column", 				//column Name
+	"current": {
+		"state": "loading",						//column State
+		"value": "Test Value",					//column Value
+		"isStale": false,						//should be recomputed?
+	}					
+}
+```
