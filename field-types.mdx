@@ -1,0 +1,17 @@
+---
+title: "How we process different field types."
+description: "You can store different types of data within Airtable. From simple text to files to referencing one or multiple collaborators. This information is stored in different formats within Airtable."
+---
+
+### We simplified the different field types into an easily consumable structure.
+
+Let's start with the basics and end with the more advanced columns later.
+
+All of our webhooks will deliver `AI Text`, `Email`, `Long Text`,`Phone` ,`Rich Text` , `URL`and `Single Line Text`  fields as **simple strings**.
+
+```json
+"fld...": {										//column Id
+	"name": "Test Column", 						//column Name
+	"current": "https://www.drinkforfood.de" 	//current column Value
+}
+```
