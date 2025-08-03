@@ -39,5 +39,9 @@
     "dark": "/logo/SW_Logo.svg"
   },
   "navbar": {},
-  "footer": {}
+  "footer": {
+    "socials":{
+      "slack":"https://join.slack.com/t/simplifiedwebhooks/shared_invite/zt-38w1dpuli-gc49u1pGm0tzIvDh_KPzQw"
+    }
+  }
 }
