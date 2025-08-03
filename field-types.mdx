@@ -22,7 +22,7 @@ Looking at the data structure this means that `New Airtable Records` webhooks wi
 	"recordId": "rec...",			//record Id of new record 
 	"tableId": "tbl...",			//table Id of the new record 
 	"baseId": "app...",				//base Id of the new record 
-	"fieldsById": {
+	"fields": {
 		"fld..": {					//column Id 
 			"name":"...", 			//column Name 
 			"current":"..." 		//current value as string 
@@ -41,7 +41,7 @@ The webhooks for `Updated Airtable Records` will additionally contain a `previou
 	"recordId": "rec...",			//record Id of new record 
 	"tableId": "tbl...",			//table Id of the new record 
 	"baseId": "app...",				//base Id of the new record 
-	"fieldsById": {
+	"fields": {
 		"fld..": {					//column Id 
 			"name":"...",			//column Name 
 			"current":"...",		//current value as string 
@@ -334,7 +334,7 @@ Output format `date` will be sent as a ISO-8601 formatted date string:
 }
 ```
 
-Normal text output for `formula` and `lookup` columns will be sent as a simple string:
+Normal text output for `formula`, `rollup` and `lookup` columns will be sent as a simple string:
 
 ```json
 //if the output format is not specified differently
@@ -344,18 +344,10 @@ Normal text output for `formula` and `lookup` columns will be sent as a simple s
 }
 ```
 
-`Rollup` columns that result a single line of text **<u>deviate</u>** from the above structure. An example would be a rollup column that contains `Arrayjoin(values)`  as the formula. **These will be sent as an array**:
+`Rollup` columns that return an array will be delivered as such:
 
 ```json
-//rollup columns with e.g. "Arrayjoin(values)"
-"fld...": {										//column Id
-	"name": "Test Rollup Column", 				//column Name
-	"current": [								//current column Value
-		"Text1"
-	] 							
-}
-
-//rollup column with simply: "values"
+//rollup column with an array result e.g. simply: "values"
 "fld...": {										//column Id
 	"name": "Test Rollup Column", 				//column Name
 	"current": [								//current column Value
