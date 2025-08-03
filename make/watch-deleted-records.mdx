@@ -1,16 +1,16 @@
 ---
 title: "Watch Deleted Airtable Records on Make"
-description: "When to use the 'Watch Deleted Airtable Records' trigger and what to expect."
+description: "When to use the Watch Deleted Airtable Records trigger and what to expect."
 sidebarTitle: "Watch Deleted Airtable Records"
 ---
 
 ### Setup the Make Scenario
 
-Create a new scenario, search for 'Simplified Webhooks' and choose the 'Watch Deleted Airtable Records' module. If you have not setup a module before, visit the [quickstart](https://docs.simplified-webhooks.com/quickstart) to go through every step.
+Create a new scenario, search for 'Simplified Webhooks' and choose the `Watch Deleted Airtable Records` module. If you have not setup a module before, visit the [quickstart](https://docs.simplified-webhooks.com/quickstart) to go through every step.
 
 ### Receiving Triggers
 
-The module 'Watch Deleted Airtable Records' receives a trigger every time a record has been deleted in the chosen **Table** of your Airtable Base.
+The module `Watch Deleted Airtable Records` receives a trigger every time a record has been deleted in the chosen **Table** of your Airtable Base.
 
 The output of the module will always look like this:
 
@@ -21,8 +21,6 @@ The output of the module will always look like this:
         "recordId": "rec4yurm8f16BwMFj",
         "tableId": "tblKn2Ygplrq5Kmbg",
         "baseId": "appatVcKk6xNFwPej",
-        "fieldsById": {}, //will always be empty
-        "fieldsByName": {}, //will always be empty
         "meta": {
             "source": "client",
             "occurredAt": "2025-07-14T08:47:20.174Z",
@@ -37,7 +35,7 @@ The output of the module will always look like this:
 
 ### Key components
 
-In every trigger you will always find
+In every delete-trigger you will always find
 
 ```json
 {
@@ -45,8 +43,6 @@ In every trigger you will always find
 "recordId":"",
 "tableId":"",
 "baseId":"",
-"fieldsById":{},
-"fieldsByName":{},
 "meta":{}
 }
 ```
