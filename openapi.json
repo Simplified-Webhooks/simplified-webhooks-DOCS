@@ -1,0 +1,741 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "23b2a6f6-43e5-4b29-8061-12e1246d9acc",
+            "name": "Simplified Webhooks Backend",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2025-08-05T11:12:34.000Z",
+            "createdAt": "2025-03-18T18:20:11.000Z",
+            "lastUpdatedBy": "33115532",
+            "uid": "33115532-23b2a6f6-43e5-4b29-8061-12e1246d9acc"
+        },
+        "item": [
+            {
+                "name": "Webhhoks",
+                "item": [
+                    {
+                        "name": "registerNewWebhook - update",
+                        "id": "b7d987f7-1ad4-480c-8883-46a4b7ae6d90",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n    \"baseId\":\"appkGlXEiufQLn1Qd\",\n    \"tableId\":\"tblMHdKX6vN1Eci9x\",\n    \"event\":\"record_update\",\n    \"columnId\": [\n        \"fldAqLqTAgpBIv6HF\",\n        \"fldAqLqTAgpBIv6HF\"\n    ],\n    \"webhookUrl\":\"https://hook.eu2.make.com/qaqkc5cb69g1w0lgsondy3kuqnxmk1pd\"\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/webhooks/register",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "webhooks",
+                                    "register"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-b7d987f7-1ad4-480c-8883-46a4b7ae6d90"
+                    },
+                    {
+                        "name": "registerNewWebhook - create",
+                        "id": "a62613c0-f2fc-49ba-bcfb-081f138f4a12",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n    \"baseId\":\"appkGlXEiufQLn1Qd\",\n    \"tableId\":\"tblMHdKX6vN1Eci9x\",\n    \"event\":\"record_create\",\n    \"webhookUrl\":\"https://hook.eu1.make.com/ov3sr8d8lyx9ana2jxcio8wcxi46n15n\"\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/webhooks/register",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "webhooks",
+                                    "register"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-a62613c0-f2fc-49ba-bcfb-081f138f4a12"
+                    },
+                    {
+                        "name": "registerNewWebhook - delete",
+                        "id": "2677e4a6-a35d-42ee-bd7e-cce497cec4fc",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n    \"baseId\":\"appkGlXEiufQLn1Qd\",\n    \"tableId\":\"tblMHdKX6vN1Eci9x\",\n    \"event\":\"record_delete\",\n    \"webhookUrl\":\"https://hook.eu1.make.com/ov3sr8d8lyx9ana2jxcio8wcxi46n15n\"\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/webhooks/register",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "webhooks",
+                                    "register"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-2677e4a6-a35d-42ee-bd7e-cce497cec4fc"
+                    },
+                    {
+                        "name": "deleteWebhook",
+                        "id": "96af1fbf-fe59-4048-b21f-2997800fca1b",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "DELETE",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{url}}/webhooks/delete/20c775ff-666c-42d7-b4db-26e4af4e43c7",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "webhooks",
+                                    "delete",
+                                    "20c775ff-666c-42d7-b4db-26e4af4e43c7"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-96af1fbf-fe59-4048-b21f-2997800fca1b"
+                    }
+                ],
+                "id": "df181fc8-4a0f-41a2-99b8-cd146b189aa9",
+                "uid": "33115532-df181fc8-4a0f-41a2-99b8-cd146b189aa9"
+            },
+            {
+                "name": "Airtable",
+                "item": [
+                    {
+                        "name": "patCheck",
+                        "id": "d286657e-a259-4243-b6dd-29a7d354ec55",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{{PAT}}",
+                                "options": {
+                                    "raw": {
+                                        "language": "text"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/airtable/patCheck",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "airtable",
+                                    "patCheck"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-d286657e-a259-4243-b6dd-29a7d354ec55"
+                    },
+                    {
+                        "name": "listTables",
+                        "id": "348a3e64-5d2b-423c-86af-ff1b32b07b5f",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{url}}/airtable/listTables?baseId=appkGlXEiufQLn1Qd",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "airtable",
+                                    "listTables"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "baseId",
+                                        "value": "appkGlXEiufQLn1Qd"
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-348a3e64-5d2b-423c-86af-ff1b32b07b5f"
+                    },
+                    {
+                        "name": "listBases",
+                        "id": "64f87fc1-d81f-468a-826e-b34cf3f88b03",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{url}}/airtable/listBases",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "airtable",
+                                    "listBases"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-64f87fc1-d81f-468a-826e-b34cf3f88b03"
+                    }
+                ],
+                "id": "0c37622c-9608-460c-914e-d3b7e8e22eaf",
+                "uid": "33115532-0c37622c-9608-460c-914e-d3b7e8e22eaf"
+            },
+            {
+                "name": "Encryption",
+                "item": [
+                    {
+                        "name": "encrypt",
+                        "id": "17140b30-ec74-4a16-8875-d1f7e3148641",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "patZGF3T8pVm6kutj.35ae26f69c2c3ccd732b59baa2bdc0c8b22f4c3e0ff5bdc9491f294fec53ff6f",
+                                "options": {
+                                    "raw": {
+                                        "language": "text"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/encryption/encrypt",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "encryption",
+                                    "encrypt"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-17140b30-ec74-4a16-8875-d1f7e3148641"
+                    },
+                    {
+                        "name": "decrypt",
+                        "id": "277b6c23-c2d2-4b8d-ae88-d09e10f0da68",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "auth": {
+                                "type": "noauth"
+                            },
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "7hLmzpLx6VTrNFLVlb1mWZp+J9e9Dj8OOjXfA2+02f7i+W4zlE3oRMA4pGF2hAN+7vc4076s0u5KOjv2DhvbBdcWowxiD1vQdVBetwUQWOZZ9hisoMmsm0o9oyoOStTU/B+orf5fsDHK/GPnVNo=",
+                                "options": {
+                                    "raw": {
+                                        "language": "text"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/encryption/decrypt",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "encryption",
+                                    "decrypt"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-277b6c23-c2d2-4b8d-ae88-d09e10f0da68"
+                    }
+                ],
+                "id": "66cda1b6-bf7a-4224-bc7b-f7c6cc2a564e",
+                "uid": "33115532-66cda1b6-bf7a-4224-bc7b-f7c6cc2a564e"
+            },
+            {
+                "name": "Profiles",
+                "item": [
+                    {
+                        "name": "verifyConnection",
+                        "id": "2123aeab-391f-4d3a-ba75-1db98d968667",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{url}}/profile/verifyConnection",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "profile",
+                                    "verifyConnection"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-2123aeab-391f-4d3a-ba75-1db98d968667"
+                    }
+                ],
+                "id": "c60443a2-a09f-4360-9524-44d71ad4bb63",
+                "uid": "33115532-c60443a2-a09f-4360-9524-44d71ad4bb63"
+            },
+            {
+                "name": "Notifications",
+                "item": [
+                    {
+                        "name": "Ping - create",
+                        "id": "f698414d-bd23-4ac6-b815-19f6c84bc186",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "auth": {
+                                "type": "noauth"
+                            },
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "X-Airtable-Content-MAC",
+                                    "value": "{{MacSecretCreate}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"base\": {\n    \"id\": \"appkGlXEiufQLn1Qd\"\n  },\n  \"webhook\": {\n    \"id\": \"ach3rskwPaTLy8fP9\"\n  },\n  \"timestamp\": \"2022-02-01T21:25:05.663Z\"\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/notifications/ping",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "notifications",
+                                    "ping"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-f698414d-bd23-4ac6-b815-19f6c84bc186"
+                    },
+                    {
+                        "name": "Ping - update",
+                        "id": "ed89aeb1-7c26-46d9-b2dc-e4f18a7d69df",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "X-Airtable-Content-MAC",
+                                    "value": "{{MacSecretUpdate}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"base\": {\n    \"id\": \"appkGlXEiufQLn1Qd\"\n  },\n  \"webhook\": {\n    \"id\": \"ach5JviIK2zgxup0o\"\n  },\n  \"timestamp\": \"2022-02-01T21:25:05.663Z\"\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/notifications/ping",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "notifications",
+                                    "ping"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-ed89aeb1-7c26-46d9-b2dc-e4f18a7d69df"
+                    },
+                    {
+                        "name": "Ping - delete",
+                        "id": "ee0bf435-5f8b-4af3-ad25-05b2e2e1a779",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "X-Airtable-Content-MAC",
+                                    "value": "{{MacSecretDelete}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n  \"base\": {\n    \"id\": \"appkGlXEiufQLn1Qd\"\n  },\n  \"webhook\": {\n    \"id\": \"achNktF60isaFv7VM\"\n  },\n  \"timestamp\": \"2022-02-01T21:25:05.663Z\"\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/notifications/ping",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "notifications",
+                                    "ping"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-ee0bf435-5f8b-4af3-ad25-05b2e2e1a779"
+                    }
+                ],
+                "id": "c5263ba3-6386-428f-a918-5996f39e854a",
+                "uid": "33115532-c5263ba3-6386-428f-a918-5996f39e854a"
+            },
+            {
+                "name": "[LOCAL] Test",
+                "item": [
+                    {
+                        "name": "test - transform CREATE payload",
+                        "id": "3abf9d1c-afe9-4e6f-bd15-6318e7ce57d5",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\r\n    \"timestamp\": 1750167578.23,\r\n    \"payloadFormat\": \"v0\",\r\n    \"actionMetadata\": {\r\n        \"source\": \"client\",\r\n        \"sourceMetadata\": {\r\n            \"user\": {\r\n                \"id\": \"usr9PqtUmTJ7VyGrv\",\r\n                \"name\": \"Ingo Becker\",\r\n                \"email\": \"mail@ingobecker.de\",\r\n                \"profilePicUrl\": \"https://static.airtable.com/images/userIcons/user_icon_8.png\",\r\n                \"permissionLevel\": \"create\"\r\n            }\r\n        }\r\n    },\r\n    \"changedTablesById\": {\r\n        \"tblMHdKX6vN1Eci9x\": {\r\n            \"changedRecordsById\": null,\r\n            \"createdRecordsById\": {\r\n                \"recoLDO2E0lBiyZUY\": {\r\n                    \"createdTime\": 1750167577,\r\n                    \"cellValuesByFieldId\": {\r\n                        \"fld0ciAHAX3tK4mdd\": 0.3,\r\n                        \"fld1xwO5EGTMukXOu\": \"recoLDO2E0lBiyZUY\",\r\n                        \"fldAqLqTAgpBIv6HF\": \"+491781975826\",\r\n                        \"fldAuxOaOIEvtFgBF\": 4,\r\n                        \"fldCFkyAbZh8MOkKt\": [\r\n                            {\r\n                                \"id\": \"selCt1luCYUtbzQY9\",\r\n                                \"name\": \"Unterwäsche\",\r\n                                \"color\": \"blueLight2\"\r\n                            }\r\n                        ],\r\n                        \"fldCK2XqH16wcgLHc\": \"Valerius Texteis S.A. - Portugal\",\r\n                        \"fldG2S1VmplfR4p0L\": [\r\n                            {\r\n                                \"id\": \"usr9PqtUmTJ7VyGrv\",\r\n                                \"name\": \"Ingo Becker\",\r\n                                \"email\": \"mail@ingobecker.de\",\r\n                                \"profilePicUrl\": \"https://static.airtable.com/images/userIcons/user_icon_8.png\",\r\n                                \"permissionLevel\": \"create\"\r\n                            },\r\n                            {\r\n                                \"id\": \"invBGg76ScK6JsFtt\",\r\n                                \"email\": \"richard@go-synergetic.com\",\r\n                                \"permissionLevel\": \"read\"\r\n                            }\r\n                        ],\r\n                        \"fldLcbGROTV76cUiw\": 234,\r\n                        \"fldRwR3D3VCd6uBBn\": [\r\n                            {\r\n                                \"id\": \"recTrCKlkRK8iB0FZ\",\r\n                                \"name\": \"test\"\r\n                            },\r\n                            {\r\n                                \"id\": \"recWkeinhSBeNi0aY\",\r\n                                \"name\": \"test copy\"\r\n                            }\r\n                        ],\r\n                        \"fldWQsmkauubtgHIY\": \"Valerius Texteis S.A.\",\r\n                        \"fldX5GjYiR5XRSgOe\": \"Diest ist ein Hinweis. Er sollte lang sein, da dies ein Langtext-Feld ist.\",\r\n                        \"fldXig7EfBdKpfkjc\": \"Portugal\",\r\n                        \"fldb1G9MyXoVteHZY\": 6960,\r\n                        \"fldfKupPrHm5EUc9r\": 45,\r\n                        \"fldlaoO7ZdmoSsfwb\": \"www.google.com\",\r\n                        \"fldoaObzCk72EMHfa\": {\r\n                            \"id\": \"selwMUWoFFFQTBNFl\",\r\n                            \"name\": \"gut\",\r\n                            \"color\": \"blueLight2\"\r\n                        },\r\n                        \"fldrKNIKLVjmn11fJ\": {\r\n                            \"linkedRecordIds\": [\r\n                                \"recTrCKlkRK8iB0FZ\",\r\n                                \"recWkeinhSBeNi0aY\"\r\n                            ],\r\n                            \"valuesByLinkedRecordId\": {\r\n                                \"recTrCKlkRK8iB0FZ\": [\r\n                                    \"soldkfnopaswinhjfopiseHNFGOInedogifnsadoihsdofoisdn\"\r\n                                ],\r\n                                \"recWkeinhSBeNi0aY\": [\r\n                                    \"soldkfnopaswinhjfopiseHNFGOInedogifnsadoihsdofoisdn\"\r\n                                ]\r\n                            }\r\n                        },\r\n                        \"fldsgQxyEpn2yf9RB\": {\r\n                            \"linkedRecordIds\": [\r\n                                \"recTrCKlkRK8iB0FZ\",\r\n                                \"recWkeinhSBeNi0aY\"\r\n                            ],\r\n                            \"valuesByLinkedRecordId\": {\r\n                                \"recTrCKlkRK8iB0FZ\": [\r\n                                    {\r\n                                        \"id\": \"atttAu77smkZybqiY\",\r\n                                        \"url\": \"https://v5.airtableusercontent.com/v3/u/42/42/1750176000000/ztK62FU4bNIfYt3IXld7mg/0_xX2JHSAdXWA9s1vFUiz3L0Z6yzN61i6BKJf_UHuW-5Hab73UXHEjym67oQ4lwetj-kE8Vf1TVAaGWGeaqsRU90IayI94dTznhrQQ58LZNwSyvNTjNAN1HXCFMDlBkD4bA0f-VFrPKUjY955afwZIaAHglC08YXDlDEHYdF3iM/9J3o6ZwXz-m-DxOM5CtmL6dCGmH-pUolIge7BF4Bn44\",\r\n                                        \"size\": 4279,\r\n                                        \"type\": \"application/pdf\",\r\n                                        \"filename\": \"stundenzettel.pdf\",\r\n                                        \"thumbnails\": {\r\n                                            \"large\": {\r\n                                                \"url\": \"https://v5.airtableusercontent.com/v3/u/42/42/1750176000000/tUWWciYzyQv9JPBWoHHIWQ/LdkgLbPTxCVHL0JICMIAwLY1YBqWG1kNIZaM4Potay5eTiKQFYKT-pPqma64592TXKcaaBZ4Ol-846XD2MGSwiov8wlrmxFknCElhW3hA6WvSOGvJPQ-u_al-wUj5LGu6W9vO944mLCuMDOHLbZdyQ/jzHEPaVUXLEDXhVqsSnJ4a4J8Gp9wfzlpDk5DQ5Rc0k\",\r\n                                                \"width\": 512,\r\n                                                \"height\": 725\r\n                                            },\r\n                                            \"small\": {\r\n                                                \"url\": \"https://v5.airtableusercontent.com/v3/u/42/42/1750176000000/ibU-ZDY_mvZ-DBexTO4jFw/x0_phv67HL1WERO2XUzQ_xuMwUHfaeiqypnvrParlP1jeCRCNTlfBkWTsrKwfKotGM19xp2PI04gb4mvmzVlMMROs8qdWuL9jPs9Wdny36viQHXN9gewnUGD3gj83TBzye7GMDTqC9chcUwF6q7JtA/loD7fB5im52-QlofExb5W9YQrihgTcX6eKbFG6a-vaM\",\r\n                                                \"width\": 25,\r\n                                                \"height\": 35\r\n                                            }\r\n                                        }\r\n                                    }\r\n                                ],\r\n                                \"recWkeinhSBeNi0aY\": [\r\n                                    {\r\n                                        \"id\": \"atttAu77smkZybqiY\",\r\n                                        \"url\": \"https://v5.airtableusercontent.com/v3/u/42/42/1750176000000/ztK62FU4bNIfYt3IXld7mg/0_xX2JHSAdXWA9s1vFUiz3L0Z6yzN61i6BKJf_UHuW-5Hab73UXHEjym67oQ4lwetj-kE8Vf1TVAaGWGeaqsRU90IayI94dTznhrQQ58LZNwSyvNTjNAN1HXCFMDlBkD4bA0f-VFrPKUjY955afwZIaAHglC08YXDlDEHYdF3iM/9J3o6ZwXz-m-DxOM5CtmL6dCGmH-pUolIge7BF4Bn44\",\r\n                                        \"size\": 4279,\r\n                                        \"type\": \"application/pdf\",\r\n                                        \"filename\": \"stundenzettel.pdf\",\r\n                                        \"thumbnails\": {\r\n                                            \"large\": {\r\n                                                \"url\": \"https://v5.airtableusercontent.com/v3/u/42/42/1750176000000/tUWWciYzyQv9JPBWoHHIWQ/LdkgLbPTxCVHL0JICMIAwLY1YBqWG1kNIZaM4Potay5eTiKQFYKT-pPqma64592TXKcaaBZ4Ol-846XD2MGSwiov8wlrmxFknCElhW3hA6WvSOGvJPQ-u_al-wUj5LGu6W9vO944mLCuMDOHLbZdyQ/jzHEPaVUXLEDXhVqsSnJ4a4J8Gp9wfzlpDk5DQ5Rc0k\",\r\n                                                \"width\": 512,\r\n                                                \"height\": 725\r\n                                            },\r\n                                            \"small\": {\r\n                                                \"url\": \"https://v5.airtableusercontent.com/v3/u/42/42/1750176000000/ibU-ZDY_mvZ-DBexTO4jFw/x0_phv67HL1WERO2XUzQ_xuMwUHfaeiqypnvrParlP1jeCRCNTlfBkWTsrKwfKotGM19xp2PI04gb4mvmzVlMMROs8qdWuL9jPs9Wdny36viQHXN9gewnUGD3gj83TBzye7GMDTqC9chcUwF6q7JtA/loD7fB5im52-QlofExb5W9YQrihgTcX6eKbFG6a-vaM\",\r\n                                                \"width\": 25,\r\n                                                \"height\": 35\r\n                                            }\r\n                                        }\r\n                                    }\r\n                                ]\r\n                            }\r\n                        },\r\n                        \"fldtzUwVkoCNiH32B\": {\r\n                            \"linkedRecordIds\": [\r\n                                \"recTrCKlkRK8iB0FZ\",\r\n                                \"recWkeinhSBeNi0aY\"\r\n                            ],\r\n                            \"valuesByLinkedRecordId\": {\r\n                                \"recTrCKlkRK8iB0FZ\": [\r\n                                    \"test\"\r\n                                ],\r\n                                \"recWkeinhSBeNi0aY\": [\r\n                                    \"test copy\"\r\n                                ]\r\n                            }\r\n                        },\r\n                        \"fldx6xJrEhFkMIVS0\": \"Barcelos\",\r\n                        \"fldzQyf649pTiB1a9\": \"test@testdomain.de\",\r\n                        \"fldzts7YcZSu8pOnf\": \"2025-06-10\",\r\n                        \"fldmUd7keKVauoXcm\": {\r\n                            \"text\": \"4061462898372\",\r\n                            \"type\": \"ean13\"\r\n                        },\r\n                        \"flddeYAumPcSkqc7f\": [\r\n                            {\r\n                                \"id\": \"attjjgtMyrgXfOEWv\",\r\n                                \"url\": \"https://v5.airtableusercontent.com/v3/u/43/43/1753912800000/pctnTHArG3gY7niF7Z-ODQ/CAAw5O2n2SVGEv1mrOLywKdRuKE8mJYxrFQUX0k0s60Ho8JSGV9WEeuOQ4p3OLhSPByFTwcUAb61oCyyo1Ugyg6R8F7bq80MRqehY6m6DydYY4WdaTZVwR0lEGuF7RCOekftMP8-R6D6KTbz6VMCHZDNKIM54_vakdJHRenH_bs/tHIY8EGfWihAD9YzdDAPnXRePtDakbUFc6GZMdd3nCQ\",\r\n                                \"size\": 13022,\r\n                                \"type\": \"image/png\",\r\n                                \"width\": 528,\r\n                                \"height\": 528,\r\n                                \"filename\": \"Logo-2.png\",\r\n                                \"thumbnails\": {\r\n                                    \"full\": {\r\n                                        \"url\": \"https://v5.airtableusercontent.com/v3/u/43/43/1753912800000/oOfCYBGb2slihLCKvBRgZQ/aUs4B9CSpmcofcHgNRwQQjcyexpiJXwfbwEU23FgxUSldMGXMmFxQZnMdN1gGk4S8mfgVYhWbHxfi5jim1N2Z33BKHYOcDLsETc0s1OaWSYAYadbY_DvLPBBPSaUQIIlcLl5fkLfNgDFf-7rNeRw0A/5UlXSTV7R8VSkD1Sg4YKoTS_jtwQM0pFTMMQgQNE-W0\",\r\n                                        \"width\": 528,\r\n                                        \"height\": 528\r\n                                    },\r\n                                    \"large\": {\r\n                                        \"url\": \"https://v5.airtableusercontent.com/v3/u/43/43/1753912800000/rSKctwfC6upskOEtcUvhcg/KLsnAEcKSJpRSaLIWp_dMtJD-CxeGAnf7vbMWl8bwgQhRkMknXswoVoarT6ghYxJ4EMe1o1-ULbI-QWcjqktg4kVmAWbKny9yPH-Ewwp67jqNVpBLqOaRtqh2vPq_Vf9Soltv2nLQKN0GxFHRmZQXw/7H17YQKR5e2P8hPJdsIIGLatJavqdoYwHvgb9qSWOrM\",\r\n                                        \"width\": 512,\r\n                                        \"height\": 512\r\n                                    },\r\n                                    \"small\": {\r\n                                        \"url\": \"https://v5.airtableusercontent.com/v3/u/43/43/1753912800000/8uziJuYYjXCYTqwOz2-85g/nL3FltARk9BTwvknzaQ4qYlmUUyxU0c5eTHaxl7FTXxrUXtVimiRHDYjgFA2fgVgRd9EbmmZalDbiSet1H8ZsyLt5d-cUO9v2_IL52tx5BoZg5_r7RDfB9GW3XlonNRWMx4Mp01800askBNN5VMYLw/Jc2T30cNOFOH-BVw5PUc4swBciTmEJiyxi4pXD3UD0A\",\r\n                                        \"width\": 36,\r\n                                        \"height\": 36\r\n                                    }\r\n                                }\r\n                            },\r\n                            {\r\n                                \"id\": \"attybDNZ4djx3wwUe\",\r\n                                \"url\": \"https://v5.airtableusercontent.com/v3/u/43/43/1753912800000/PhaKjjWC4QnkH8UWe4-ISg/uXKro0EOf8ddiu3VyJxVrL4rOHUiaVl35QeXpfM5F6D4uuq-ECIvR8fGCWjBSZjU578iVaLkIwCJbdzhmHgScd-XOsOu3NS8z0u_joygqD4KegdMuwhzW6CGsisfE9ekevn48dT2s8wo-qoXf2wz_NFLZ2Tw2Nqxoy9yOxIzXk6QjNL2_Wh4-qUI-onfIA6DNWOh5zSJefTJA3Nkyo4LSA/klzaFKCTz_sQb7x1k_iTYNjHYL53USa_qMZ0FOtLcDw\",\r\n                                \"size\": 741485,\r\n                                \"type\": \"image/png\",\r\n                                \"width\": 1920,\r\n                                \"height\": 1920,\r\n                                \"filename\": \"mac-and-cheese-transparent-background-png-1076111267.png\",\r\n                                \"thumbnails\": {\r\n                                    \"full\": {\r\n                                        \"url\": \"https://v5.airtableusercontent.com/v3/u/43/43/1753912800000/ZNJa9wdF8XxBGOgBFSNIIw/xMtta-v7A1PjHYzlOBv1ql7EHQOuL3HBly-L2Tiasrwpn1gD3EgpTKD6SduPofhn85A55E12y0AmOjjCqOwQmLX4QwmWxWu3oNBvggdllbL2I4YTGTT0dZiLJRW7mQM2u99byjMNNP-ugoL3uxMsfg/h0Ls9cgz4PzIuDABti3ca3WpAxbSInfHxuHueNMfdEA\",\r\n                                        \"width\": 1920,\r\n                                        \"height\": 1920\r\n                                    },\r\n                                    \"large\": {\r\n                                        \"url\": \"https://v5.airtableusercontent.com/v3/u/43/43/1753912800000/nV586jef0khStvNx1BZjAQ/nPZrNC07aWgzxLagq6eeUqJBB9Ye55o_NbZ1wli0euqfIC0KYfpWumNDfjyOoLdM_HWqXgVhkxvYdA7m0pSxLBIyfDQH47KqziZ5R7eHYCd_6m0OBNvujojTBaBN3o9Z71MHSSx7LW_OVELsAOaC7Q/GscnAiMjFmvDpiHB2M3865qPiPaIOwKofG0eBsX6kJU\",\r\n                                        \"width\": 512,\r\n                                        \"height\": 512\r\n                                    },\r\n                                    \"small\": {\r\n                                        \"url\": \"https://v5.airtableusercontent.com/v3/u/43/43/1753912800000/mhpVjMrPCiiyb9ZtrT9n4Q/mR9Vc2VLk_1l3dXx5bEiJ-4ULbhteQDWQuFtFGIgT8Kuswa6w9-XQmqVilH7BE6b9MO-B8b8ca-lulawOCihV-m5W2AUpYqCUQ0UbP4jXHkpDaYIkqRTL4yN22LvacZXOyNK6ZVv50v0D0PgW2zBmw/KG644hJ7rIEF7QKMXkwTsxssYHaNQR0-B2dM6aqQ-Ig\",\r\n                                        \"width\": 36,\r\n                                        \"height\": 36\r\n                                    }\r\n                                }\r\n                            }\r\n                        ]\r\n                    }\r\n                }\r\n            },\r\n            \"destroyedRecordIds\": null\r\n        }\r\n    },\r\n    \"baseTransactionNumber\": 550\r\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/test/transformPayload/create",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "test",
+                                    "transformPayload",
+                                    "create"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-3abf9d1c-afe9-4e6f-bd15-6318e7ce57d5"
+                    },
+                    {
+                        "name": "test - transform UPDATE payload",
+                        "id": "6975b5e8-73ee-4f87-b79d-83b29f0b1d15",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\r\n    \"timestamp\": 1750502415.072000000,\r\n    \"payloadFormat\": \"v0\",\r\n    \"actionMetadata\": {\r\n        \"source\": \"client\",\r\n        \"sourceMetadata\": {\r\n            \"user\": {\r\n                \"id\": \"usr9PqtUmTJ7VyGrv\",\r\n                \"name\": \"Ingo Becker\",\r\n                \"email\": \"mail@ingobecker.de\",\r\n                \"profilePicUrl\": \"https://static.airtable.com/images/userIcons/user_icon_8.png\",\r\n                \"permissionLevel\": \"create\"\r\n            }\r\n        }\r\n    },\r\n    \"changedTablesById\": {\r\n        \"tblMHdKX6vN1Eci9x\": {\r\n            \"changedRecordsById\": {\r\n                \"recA4tfKOk0DeXF8O\": {\r\n                    \"current\": {\r\n                        \"cellValuesByFieldId\": {\r\n                            \"fldoaObzCk72EMHfa\": {\r\n                                \"id\": \"selwMUWoFFFQTBNFl\",\r\n                                \"name\": \"gut\",\r\n                                \"color\": \"blueLight2\"\r\n                            }\r\n                        }\r\n                    },\r\n                    \"previous\": {\r\n                        \"cellValuesByFieldId\": {\r\n                            \"fldoaObzCk72EMHfa\": null\r\n                        }\r\n                    }\r\n                }\r\n            },\r\n            \"createdRecordsById\": null,\r\n            \"destroyedRecordIds\": null\r\n        }\r\n    },\r\n    \"baseTransactionNumber\": 768\r\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/test/transformPayload/update",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "test",
+                                    "transformPayload",
+                                    "update"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-6975b5e8-73ee-4f87-b79d-83b29f0b1d15"
+                    },
+                    {
+                        "name": "test - transform DELETE payload",
+                        "id": "ac744fc8-04e8-4b9f-8fda-74058b2b3974",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{supabase-auth}}",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "{{apiKey}}",
+                                    "type": "text"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\r\n            \"timestamp\": \"2025-07-20T09:40:27.050Z\",\r\n            \"baseTransactionNumber\": 927,\r\n            \"actionMetadata\": {\r\n                \"source\": \"client\",\r\n                \"sourceMetadata\": {\r\n                    \"user\": {\r\n                        \"id\": \"usr9PqtUmTJ7VyGrv\",\r\n                        \"email\": \"mail@ingobecker.de\",\r\n                        \"permissionLevel\": \"create\",\r\n                        \"name\": \"Ingo Becker\",\r\n                        \"profilePicUrl\": \"https://static.airtable.com/images/userIcons/user_icon_8.png\"\r\n                    }\r\n                }\r\n            },\r\n            \"payloadFormat\": \"v0\",\r\n            \"changedTablesById\": {\r\n                \"tblMHdKX6vN1Eci9x\": {\r\n                    \"destroyedRecordIds\": [\r\n                        \"recwXhkKO89aIaXb4\"\r\n                    ]\r\n                }\r\n            }\r\n        }",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "{{url}}/test/transformPayload/delete",
+                                "host": [
+                                    "{{url}}"
+                                ],
+                                "path": [
+                                    "test",
+                                    "transformPayload",
+                                    "delete"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "33115532-ac744fc8-04e8-4b9f-8fda-74058b2b3974"
+                    }
+                ],
+                "id": "4cbca114-b765-4514-97c8-3dbc3e6c6d59",
+                "uid": "33115532-4cbca114-b765-4514-97c8-3dbc3e6c6d59"
+            }
+        ],
+        "event": [
+            {
+                "listen": "prerequest",
+                "script": {
+                    "id": "e174f9c0-3b7c-4375-9eab-1637598816dd",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                        ""
+                    ]
+                }
+            },
+            {
+                "listen": "test",
+                "script": {
+                    "id": "4f6fa5d7-36e1-4567-810d-27065810e9ed",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                        ""
+                    ]
+                }
+            }
+        ]
+    }
+}
