@@ -2,11 +2,11 @@ openapi: 3.0.4
 info:
   title: Simplified Webhooks Backend
   version: '1.0'
-  description: An API for registering and deleting webhooks.
+  description: An API for registering and deleting webhooks on Airtable.
   contact:
     name: API Support
-    url: 'https://www.example.com/support'
-    email: support@example.com
+    url: 'https://api.simplified-webhooks.com/'
+    email: contact@simplified-webhooks.com
 servers:
   - url: '{{url}}'
     description: Main server
@@ -137,4 +137,4 @@ components:
       type: apiKey
       in: header
       name: Authorization
-      description: API key for authentication.```
+      description: API key for authentication.
