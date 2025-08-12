@@ -5,10 +5,10 @@ info:
   description: An API for registering and deleting webhooks on Airtable.
   contact:
     name: API Support
-    url: 'https://api.simplified-webhooks.com/'
+    url: 'https://www.simplified-webhooks.com/contact-us'
     email: contact@simplified-webhooks.com
 servers:
-  - url: '${{url}}'
+  - url: 'https://api.simplified-webhooks.com'
     description: Main server
 paths:
   /webhooks/register:
