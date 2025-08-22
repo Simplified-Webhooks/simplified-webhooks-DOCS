@@ -7,7 +7,7 @@
     "light": "#3b82f6",
     "dark": "#1d4ed8"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/favicon.svg",
   "navigation": {
     "tabs": [
       {
@@ -39,8 +39,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/SW_Logo.svg",
-    "dark": "/logo/SW_Logo.svg"
+    "light": "/logo/Logo_Text_light.svg",
+    "dark": "/logo/Logo_Text_dark.svg"
   },
   "navbar": {},
   "footer": {
