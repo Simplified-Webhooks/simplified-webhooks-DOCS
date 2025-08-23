@@ -86,7 +86,7 @@ paths:
                     example: "Missing required fields: [tableId, event]"
                   path: string
                     type: string
-                    example: "/webhooks/register"
+                    example: /webhooks/register
         '401':
           description: Unauthorized, API key is missing or invalid.
       security:
