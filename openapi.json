@@ -67,6 +67,26 @@ paths:
                     example: "20c775ff-666c-42d7-b4db-26e4af4e43c7"
         '400':
           description: Bad request due to invalid input.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  timestamp:
+                    type: string
+                    example: "2025-08-23T13:19:33.137+00:00"
+                  status
+                    type: number
+                    example: 400,
+                  error:
+                    type: string
+                    example: "Bad Request"
+                  message:
+                    type: string
+                    example: "Missing required fields: [tableId, event]"
+                  path: string
+                    type: string
+                    example: "/webhooks/register"
         '401':
           description: Unauthorized, API key is missing or invalid.
       security:
