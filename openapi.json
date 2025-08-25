@@ -84,7 +84,7 @@ paths:
                   message:
                     type: string
                     example: "Missing required fields: [tableId, event]"
-                  path: string
+                  path:
                     type: string
                     example: "/webhooks/register"
         '401':
