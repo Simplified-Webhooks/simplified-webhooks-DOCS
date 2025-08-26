@@ -60,7 +60,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: Webhook registered successfully.
+                    example: "Successfully registered new webhook for event: record_create".
                   webhookId:
                     type: string
                     format: uuid
