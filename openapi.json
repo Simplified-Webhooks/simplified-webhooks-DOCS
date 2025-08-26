@@ -87,8 +87,28 @@ paths:
                   path:
                     type: string
                     example: "/webhooks/register"
-        '401':
+        '403':
           description: Unauthorized, API key is missing or invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  timestamp:
+                    type: string
+                    example: "2025-08-23T13:19:33.137+00:00"
+                  status:
+                    type: number
+                    example: 403
+                  error:
+                    type: string
+                    example: "Forbidden"
+                  message:
+                    type: string
+                    example: "Access Denied"
+                  path:
+                    type: string
+                    example: "/webhooks/register"
       security:
         - apiKey: []
   /webhooks/delete/{webhookId}:
