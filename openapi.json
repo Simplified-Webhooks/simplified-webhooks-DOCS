@@ -109,6 +109,28 @@ paths:
                   path:
                     type: string
                     example: "/webhooks/register"
+        '404':
+          description: Base not found in Airtable.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  timestamp:
+                    type: string
+                    example: "2025-08-23T13:19:33.137+00:00"
+                  status:
+                    type: number
+                    example: 403
+                  error:
+                    type: string
+                    example: "Not Found"
+                  message:
+                    type: string
+                    example: "Base with id appkGlXEiQLn1Qd does not exist. Please check the baseId.""
+                  path:
+                    type: string
+                    example: "/webhooks/register"
       security:
         - apiKey: []
   /webhooks/delete/{webhookId}:
