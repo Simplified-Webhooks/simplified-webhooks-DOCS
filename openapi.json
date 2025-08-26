@@ -51,7 +51,7 @@ paths:
                   event: "record_delete"
                   webhookUrl: "https://hook.eu1.make.com/your-unique-hook-id"
       responses:
-        '201':
+        '200':
           description: Webhook registered successfully.
           content:
             application/json:
@@ -172,11 +172,64 @@ paths:
             format: uuid
             example: "20c775ff-666c-42d7-b4db-26e4af4e43c7"
       responses:
-        '204':
+        '200':
           description: Webhook deleted successfully.
-        '401':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Successfully deleted webhook"
+                  webhookId:
+                    type: string
+                    format: uuid
+                    example: "20c775ff-666c-42d7-b4db-26e4af4e43c7"
+        '403':
           description: Unauthorized, API key is missing or invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  timestamp:
+                    type: string
+                    example: "2025-08-23T13:19:33.137+00:00"
+                  status:
+                    type: number
+                    example: 403
+                  error:
+                    type: string
+                    example: "Forbidden"
+                  message:
+                    type: string
+                    example: "Access Denied"
+                  path:
+                    type: string
+                    example: "/webhooks/delete/d1a4bdfd-0f73-4c43-84ac-347dfe938f"
         '404':
+          description: Webhook not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  timestamp:
+                    type: string
+                    example: "2025-08-23T13:19:33.137+00:00"
+                  status:
+                    type: number
+                    example: 404
+                  error:
+                    type: string
+                    example: "Not Found"
+                  message:
+                    type: string
+                    example: "Webhook with id d1a4bdfd-0f73-4c43-84ac-347dfe938f not found"
+                  path:
+                    type: string
+                    example: "/webhooks/delete/d1a4bdfd-0f73-4c43-84ac-347dfe938f"
           description: Webhook not found.
       security:
         - apiKey: []
