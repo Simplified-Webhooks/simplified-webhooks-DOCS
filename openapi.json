@@ -230,7 +230,6 @@ paths:
                   path:
                     type: string
                     example: "/webhooks/delete/d1a4bdfd-0f73-4c43-84ac-347dfe938f"
-          description: Webhook not found.
       security:
         - apiKey: []
 components:
