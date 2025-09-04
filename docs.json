@@ -39,8 +39,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/Logo_Text_light_new3x.svg",
-    "dark": "/logo/Logo_Text_dark_new3x.svg"
+    "light": "/logo/Logo_Text_light_new3x.png",
+    "dark": "/logo/Logo_Text_dark_new3x.png"
   },
   "navbar": {},
   "footer": {
